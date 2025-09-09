@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react"
-import { Link } from "react-router"
-import { Menu, X } from "lucide-react"
+import { useState, useEffect } from "react";
+import { Link } from "react-router";
+import { Menu, X } from "lucide-react";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -9,90 +9,90 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
-} from "~/components/ui/navigation-menu"
+} from "~/components/ui/navigation-menu";
 
-import { cn } from "~/lib/utils"
+import { cn } from "~/lib/utils";
 
 // Variables pour la navigation
-const COMPANY_NAME = "GIL SERVICES"
-const LOGO_URL = "/logo.png" // Remplacez par le chemin de votre logo
+const COMPANY_NAME = "GIL SERVICES";
+const LOGO_URL = "/logo.png"; // Remplacez par le chemin de votre logo
 
 const SERVICES = [
   {
     title: "Conseil",
     href: "/nos-services#conseil",
-    description: "Conseil stratégique et accompagnement personnalisé"
+    description: "Conseil stratégique et accompagnement personnalisé",
   },
   {
     title: "Accompagnement opérationnel",
     href: "/nos-services#accompagnement-operationnel",
-    description: "Support opérationnel pour vos projets"
+    description: "Support opérationnel pour vos projets",
   },
   {
     title: "Assistance opérationnelle",
     href: "/nos-services#assistance-operationnelle",
-    description: "Assistance technique et opérationnelle"
+    description: "Assistance technique et opérationnelle",
   },
   {
     title: "Formations",
     href: "/nos-services#formations",
-    description: "Formations professionnelles adaptées à vos besoins"
-  }
-]
+    description: "Formations professionnelles adaptées à vos besoins",
+  },
+];
 
 const SHOP_CATEGORIES = [
   {
     title: "Logiciels",
     href: "/boutique/logiciels",
-    description: "Solutions logicielles sur mesure"
+    description: "Solutions logicielles sur mesure",
   },
   {
     title: "Formations",
     href: "/boutique/formations",
-    description: "Formations en développement et IT"
+    description: "Formations en développement et IT",
   },
   {
     title: "Templates",
     href: "/boutique/templates",
-    description: "Templates et thèmes prêts à l'emploi"
-  }
-]
+    description: "Templates et thèmes prêts à l'emploi",
+  },
+];
 
-const NEWS_SECTIONS = [
-  {
-    title: "Blog Technique",
-    href: "/actualites/blog",
-    description: "Articles sur les dernières technologies"
-  },
-  {
-    title: "Actualités Entreprise",
-    href: "/actualites/entreprise",
-    description: "Nouvelles de notre entreprise"
-  },
-  {
-    title: "Études de Cas",
-    href: "/actualites/etudes-cas",
-    description: "Retours d'expérience sur nos projets"
-  }
-]
+// const NEWS_SECTIONS = [
+//   // {
+//   //   title: "Blog Technique",
+//   //   href: "/actualites/blog",
+//   //   description: "Articles sur les dernières technologies"
+//   // },
+//   // {
+//   //   title: "Actualités Entreprise",
+//   //   href: "/actualites/entreprise",
+//   //   description: "Nouvelles de notre entreprise"
+//   // },
+//   {
+//     title: "Études de Cas",
+//     href: "/actualites/etudes-cas",
+//     description: "Retours d'expérience sur nos projets"
+//   }
+// ]
 
 const CAREER_SECTIONS = [
   {
     title: "Offres d'Emploi",
     href: "/carriere/offres",
-    description: "Découvrez nos postes ouverts"
+    description: "Découvrez nos postes ouverts",
   },
-  {
-    title: "Stages",
-    href: "/carriere/stages",
-    description: "Opportunités de stages"
-  },
-  {
-    title: "Culture d'Entreprise",
-    href: "/carriere/culture",
-    description: "Découvrez notre environnement de travail"
-  }
-]
+  // {
+  //   title: "Stages",
+  //   href: "/carriere/stages",
+  //   description: "Opportunités de stages"
+  // },
+  // {
+  //   title: "Culture d'Entreprise",
+  //   href: "/carriere/culture",
+  //   description: "Découvrez notre environnement de travail"
+  // }
+];
 
 function ListItem({
   className,
@@ -101,10 +101,10 @@ function ListItem({
   href,
   ...props
 }: {
-  className?: string
-  title: string
-  children: React.ReactNode
-  href: string
+  className?: string;
+  title: string;
+  children: React.ReactNode;
+  href: string;
 }) {
   return (
     <li>
@@ -124,41 +124,41 @@ function ListItem({
         </Link>
       </NavigationMenuLink>
     </li>
-  )
+  );
 }
 
 export function Navbar() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [scrollY, setScrollY] = useState(0)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrollY(window.scrollY)
-    }
+      setScrollY(window.scrollY);
+    };
 
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-  const isVisible = scrollY > 50
+  const isVisible = scrollY > 50;
 
   return (
-    <header className={cn(
-      "fixed z-50 w-full border-b transition-all duration-300 bg-background",
-      isVisible 
-        ? "translate-y-0" 
-        : "-translate-y-full"
-    )}>
+    <header
+      className={cn(
+        "fixed z-50 w-full border-b transition-all duration-300 bg-background",
+        isVisible ? "translate-y-0" : "-translate-y-full"
+      )}
+    >
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <img 
-              src={LOGO_URL} 
-              alt={`${COMPANY_NAME} Logo`} 
+            <img
+              src={LOGO_URL}
+              alt={`${COMPANY_NAME} Logo`}
               className="h-8 w-8 md:h-12 md:w-12"
               onError={(e) => {
-                e.currentTarget.style.display = 'none'
+                e.currentTarget.style.display = "none";
               }}
             />
             <span className="font-bold text-lg md:text-xl">{COMPANY_NAME}</span>
@@ -221,8 +221,15 @@ export function Navbar() {
 
               {/* Actualités */}
               <NavigationMenuItem>
-                <NavigationMenuTrigger>Actualités</NavigationMenuTrigger>
-                <NavigationMenuContent>
+                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  <Link to="/actualites">Actualités</Link>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+              <NavigationMenuItem className="hidden">
+                <NavigationMenuTrigger>
+                  <Link to="/actualites">Actualités</Link>
+                </NavigationMenuTrigger>
+                {/* <NavigationMenuContent>
                   <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                     {NEWS_SECTIONS.map((section) => (
                       <ListItem
@@ -234,7 +241,7 @@ export function Navbar() {
                       </ListItem>
                     ))}
                   </ul>
-                </NavigationMenuContent>
+                </NavigationMenuContent> */}
               </NavigationMenuItem>
 
               {/* Carrière */}
@@ -266,5 +273,5 @@ export function Navbar() {
         </div>
       </div>
     </header>
-  )
+  );
 }
