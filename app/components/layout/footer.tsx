@@ -22,7 +22,7 @@ const FOOTER_LINKS = {
     { title: "À Propos", href: "/a-propos" },
     { title: "Contact", href: "/contact" },
     { title: "Actualités", href: "/actualites" },
-    { title: "Carrière", href: "/carriere" },
+    { title: "Carrière", href: "/carriere/offres" },
   ],
   legal: [
     { title: "Mentions Légales", href: "/legal" },
