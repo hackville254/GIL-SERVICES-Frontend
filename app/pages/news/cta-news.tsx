@@ -1,26 +1,20 @@
 import { Button } from "~/components/ui/button"
 import { Card, CardContent } from "~/components/ui/card"
 import { Badge } from "~/components/ui/badge"
-import { Mail, Bell, ArrowRight } from "lucide-react"
+import { Mail, Bell, ArrowRight, Contact } from "lucide-react"
 import { motion } from "framer-motion"
 import { Link } from "react-router"
 
 const CTA_DATA = {
-  title: "Restez Connecté",
-  subtitle: "Newsletter",
-  description: "Ne manquez aucune actualité ! Abonnez-vous à notre newsletter pour recevoir nos dernières nouvelles et insights directement dans votre boîte mail.",
+  title: "Contactez-Nous",
+  subtitle: "Contact",
+  description: "Besoin d'un expert ? Prenez rendez-vous dès maintenant pour discuter de vos projets et obtenir des conseils personnalisés adaptés à vos besoins.",
   actions: [
-    {
-      label: "S'abonner à la newsletter",
-      href: "/newsletter",
-      variant: "default" as const,
-      icon: Mail
-    },
     {
       label: "Nous contacter",
       href: "/contact",
       variant: "outline" as const,
-      icon: ArrowRight
+      icon: Contact
     }
   ]
 }
