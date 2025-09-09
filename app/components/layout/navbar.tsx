@@ -19,24 +19,24 @@ const LOGO_URL = "/logo.png" // Remplacez par le chemin de votre logo
 
 const SERVICES = [
   {
-    title: "Développement Web",
-    href: "/services/web-development",
-    description: "Création de sites web modernes et responsives"
+    title: "Conseil",
+    href: "/nos-services#conseil",
+    description: "Conseil stratégique et accompagnement personnalisé"
   },
   {
-    title: "Applications Mobile",
-    href: "/services/mobile-apps",
-    description: "Développement d'applications iOS et Android"
+    title: "Accompagnement opérationnel",
+    href: "/nos-services#accompagnement-operationnel",
+    description: "Support opérationnel pour vos projets"
   },
   {
-    title: "Consulting IT",
-    href: "/services/consulting",
-    description: "Conseil en stratégie technologique"
+    title: "Assistance opérationnelle",
+    href: "/nos-services#assistance-operationnelle",
+    description: "Assistance technique et opérationnelle"
   },
   {
-    title: "Maintenance",
-    href: "/services/maintenance",
-    description: "Support et maintenance de vos systèmes"
+    title: "Formations",
+    href: "/nos-services#formations",
+    description: "Formations professionnelles adaptées à vos besoins"
   }
 ]
 
@@ -183,7 +183,9 @@ export function Navbar() {
 
               {/* Nos Services */}
               <NavigationMenuItem>
-                <NavigationMenuTrigger>Nos Services</NavigationMenuTrigger>
+                <NavigationMenuTrigger>
+                  <Link to="/nos-services">Nos Services</Link>
+                </NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                     {SERVICES.map((service) => (

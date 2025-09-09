@@ -4,7 +4,8 @@ export default [
     ...prefix("", [
         layout("routes/layout.tsx", [
         index("routes/home.tsx"),
-        route("a-propos","routes/about.tsx")
+        route("a-propos","routes/about.tsx"),
+        route("nos-services","routes/services.tsx")
     ]),
   ]),
 ] satisfies RouteConfig;
