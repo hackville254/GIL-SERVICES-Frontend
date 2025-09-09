@@ -24,9 +24,9 @@ const HERO_CONTACT_DATA = {
     },
     {
       icon: MapPin,
-      number: 3,
+      number: 10,
       suffix: "+",
-      label: "Bureaux régionaux"
+      label: "Années d'expérience"
     },
     {
       icon: Clock,

@@ -27,7 +27,7 @@ const CONTACT_INFO_DATA = {
       id: 3,
       icon: MapPin,
       title: "Adresse",
-      primary: "Douala, Cameroun",
+      primary: "Deido Grand Moulin, Douala Cameroun",
       color: "accent"
     }
   ]
