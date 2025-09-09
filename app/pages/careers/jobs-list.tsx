@@ -10,7 +10,7 @@ const JOBS_DATA = [
     id: 1,
     title: "Développeur Full Stack",
     department: "Développement",
-    location: "Paris, France",
+    location: "Yaoundé, Cameroun",
     type: "CDI",
     experience: "3-5 ans",
     description: "Nous recherchons un développeur full stack passionné pour rejoindre notre équipe technique et participer au développement de solutions innovantes.",
@@ -26,8 +26,8 @@ const JOBS_DATA = [
     id: 2,
     title: "Consultant en Stratégie",
     department: "Conseil",
-    location: "Lyon, France",
-    type: "CDI",
+    location: "Douala, Cameroun",
+    type: "CDI", 
     experience: "2-4 ans",
     description: "Rejoignez notre équipe de consultants pour accompagner nos clients dans leurs projets de transformation et de développement stratégique.",
     requirements: [
@@ -42,20 +42,19 @@ const JOBS_DATA = [
     id: 3,
     title: "Chef de Projet Digital",
     department: "Digital",
-    location: "Remote/Paris",
+    location: "Yaoundé/Douala, Cameroun",
     type: "CDI",
-    experience: "4-6 ans",
+    experience: "4-6 ans", 
     description: "Pilotez des projets digitaux innovants et accompagnez nos clients dans leur transformation numérique avec une équipe d'experts.",
     requirements: [
       "Expérience en gestion de projet digital",
-      "Maîtrise des méthodologies agiles",
+      "Maîtrise des méthodologies agiles", 
       "Leadership et communication",
       "Vision stratégique du digital"
     ],
     email: "recrutement@gilservices.com"
   }
 ]
-
 const JobCard = ({ job, index }) => {
   const handleApply = () => {
     const subject = encodeURIComponent(`Candidature - ${job.title}`)

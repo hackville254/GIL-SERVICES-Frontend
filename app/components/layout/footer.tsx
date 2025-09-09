@@ -42,11 +42,11 @@ export function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="bg-background text-foreground">
       <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* Logo et informations entreprise */}
-          <div className="lg:col-span-1 space-y-4">
+          <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center space-x-3">
               {/* Logo avec fallback */}
               <div className="relative">
@@ -55,55 +55,54 @@ export function Footer() {
                   alt={`${COMPANY_INFO.name} Logo`}
                   className="h-10 w-10 object-contain"
                   onError={(e) => {
-                    // Fallback vers le logo avec initiales si l'image ne charge pas
                     e.currentTarget.style.display = "none";
                     const fallback = e.currentTarget.nextElementSibling as HTMLElement;
                     if (fallback) fallback.style.display = "flex";
                   }}
                 />
-                <div className="w-10 h-10 bg-blue-600 rounded-lg items-center justify-center hidden">
-                  <span className="text-white font-bold text-sm">GS</span>
+                <div className="w-10 h-10 bg-primary rounded-lg items-center justify-center hidden">
+                  <span className="text-primary-foreground font-bold text-sm">GS</span>
                 </div>
               </div>
               <div>
                 <h3 className="text-xl font-bold">{COMPANY_INFO.name}</h3>
-                <p className="text-sm text-gray-400">{COMPANY_INFO.tagline}</p>
+                <p className="text-xs text-muted-foreground">{COMPANY_INFO.tagline}</p>
               </div>
             </div>
             
-            <p className="text-sm text-gray-300 leading-relaxed">
+            <p className="text-sm text-muted-foreground leading-relaxed">
               {COMPANY_INFO.description}
             </p>
             
-            <div className="space-y-2 text-sm text-gray-300">
+            <div className="space-y-2 text-sm text-muted-foreground">
               <div className="flex items-start space-x-2">
                 <MapPin className="h-4 w-4 mt-0.5 flex-shrink-0" />
                 <span>{COMPANY_INFO.address}</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="h-4 w-4 flex-shrink-0" />
-                <a href={`mailto:${COMPANY_INFO.email}`} className="hover:text-blue-400 transition-colors">
+                <a href={`mailto:${COMPANY_INFO.email}`} className="hover:text-primary transition-colors">
                   {COMPANY_INFO.email}
                 </a>
               </div>
               <div className="flex items-center space-x-2">
                 <Phone className="h-4 w-4 flex-shrink-0" />
-                <a href={`tel:${COMPANY_INFO.phone}`} className="hover:text-blue-400 transition-colors">
+                <a href={`tel:${COMPANY_INFO.phone}`} className="hover:text-primary transition-colors">
                   {COMPANY_INFO.phone}
                 </a>
               </div>
             </div>
           </div>
 
-          {/* Services */}
+          {/* Right side menu groups */}
           <div className="space-y-4">
             <h3 className="text-lg font-semibold">Nos Services</h3>
-            <ul className="space-y-2 text-sm text-gray-300">
+            <ul className="space-y-2 text-sm text-muted-foreground">
               {FOOTER_LINKS.services.map((link) => (
                 <li key={link.title}>
                   <Link 
                     to={link.href} 
-                    className="hover:text-blue-400 transition-colors"
+                    className="hover:text-primary transition-colors"
                   >
                     {link.title}
                   </Link>
@@ -112,15 +111,14 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Entreprise */}
           <div className="space-y-4">
             <h3 className="text-lg font-semibold">Entreprise</h3>
-            <ul className="space-y-2 text-sm text-gray-300">
+            <ul className="space-y-2 text-sm text-muted-foreground">
               {FOOTER_LINKS.company.map((link) => (
                 <li key={link.title}>
                   <Link 
                     to={link.href} 
-                    className="hover:text-blue-400 transition-colors"
+                    className="hover:text-primary transition-colors"
                   >
                     {link.title}
                   </Link>
@@ -129,15 +127,14 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Légal et Réseaux sociaux */}
           <div className="space-y-4">
             <h3 className="text-lg font-semibold">Légal</h3>
-            <ul className="space-y-2 text-sm text-gray-300">
+            <ul className="space-y-2 text-sm text-muted-foreground">
               {FOOTER_LINKS.legal.map((link) => (
                 <li key={link.title}>
                   <Link 
                     to={link.href} 
-                    className="hover:text-blue-400 transition-colors"
+                    className="hover:text-primary transition-colors"
                   >
                     {link.title}
                   </Link>
@@ -157,7 +154,7 @@ export function Footer() {
                       href={social.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-gray-400 hover:text-blue-400 transition-colors"
+                      className="text-muted-foreground hover:text-primary transition-colors"
                       aria-label={social.name}
                     >
                       <Icon className="h-5 w-5" />
@@ -170,7 +167,7 @@ export function Footer() {
         </div>
 
         {/* Barre du bas */}
-        <div className="border-t border-gray-800 mt-8 pt-8 text-center text-sm text-gray-400">
+        <div className="border-t border-border mt-8 pt-8 text-center text-sm text-muted-foreground">
           <p>&copy; {currentYear} {COMPANY_INFO.name}. Tous droits réservés.</p>
         </div>
       </div>

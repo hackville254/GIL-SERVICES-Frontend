@@ -8,9 +8,9 @@ const CTA_DATA = {
   title: "Prêt à Nous Rejoindre ?",
   description: "Contactez notre équipe RH pour en savoir plus sur nos opportunités de carrière et notre culture d'entreprise.",
   contact: {
-    email: "recrutement@gilservices.com",
-    phone: "+33 1 23 45 67 89",
-    address: "123 Avenue des Champs-Élysées, 75008 Paris"
+    email: "contact@gil-services.com",
+    phone: "+237 657 842 066", 
+    address: "Deido Grand Moulin, Douala Cameroun"
   }
 }
 
