@@ -8,7 +8,8 @@ export default [
         route("nos-services","routes/services.tsx"),
         route("contact","routes/contact.tsx"),
         route("actualites","routes/news.tsx"),
-        route("actualites/:slug","routes/news.$slug.tsx")
+        route("actualites/:slug","routes/news.$slug.tsx"),
+        route("carriere/offres","routes/careers.tsx")
     ]),
   ]),
 ] satisfies RouteConfig;

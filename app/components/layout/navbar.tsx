@@ -190,7 +190,7 @@ function MobileMenuItem({ item, onClose }: { item: any; onClose: () => void }) {
           </motion.div>
         )}
       </div>
-      
+
       <AnimatePresence>
         {isOpen && item.hasSubmenu && (
           <motion.div
@@ -245,25 +245,25 @@ export function Navbar() {
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       const target = event.target as Element;
-      if (mobileMenuOpen && !target.closest('.mobile-menu-container')) {
+      if (mobileMenuOpen && !target.closest(".mobile-menu-container")) {
         setMobileMenuOpen(false);
       }
     };
 
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [mobileMenuOpen]);
 
   // Empêcher le scroll du body quand le menu mobile est ouvert
   useEffect(() => {
     if (mobileMenuOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     }
-    
+
     return () => {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     };
   }, [mobileMenuOpen]);
 
@@ -289,7 +289,9 @@ export function Navbar() {
                   e.currentTarget.style.display = "none";
                 }}
               />
-              <span className="font-bold text-lg md:text-xl">{COMPANY_NAME}</span>
+              <span className="font-bold text-lg md:text-xl">
+                {COMPANY_NAME}
+              </span>
             </Link>
 
             {/* Desktop Navigation */}
@@ -331,20 +333,9 @@ export function Navbar() {
 
                 {/* Boutique */}
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger>Boutique</NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                      {SHOP_CATEGORIES.map((category) => (
-                        <ListItem
-                          key={category.title}
-                          title={category.title}
-                          href={category.href}
-                        >
-                          {category.description}
-                        </ListItem>
-                      ))}
-                    </ul>
-                  </NavigationMenuContent>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                    <Link to="/boutique">Boutique</Link>
+                  </NavigationMenuLink>
                 </NavigationMenuItem>
 
                 {/* Actualités */}
@@ -416,7 +407,7 @@ export function Navbar() {
               className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 lg:hidden"
               onClick={() => setMobileMenuOpen(false)}
             />
-            
+
             {/* Mobile Menu */}
             <motion.div
               initial={{ x: "100%" }}
@@ -456,9 +447,9 @@ export function Navbar() {
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: index * 0.05 }}
                       >
-                        <MobileMenuItem 
-                          item={item} 
-                          onClose={() => setMobileMenuOpen(false)} 
+                        <MobileMenuItem
+                          item={item}
+                          onClose={() => setMobileMenuOpen(false)}
                         />
                       </motion.div>
                     ))}
@@ -476,8 +467,8 @@ export function Navbar() {
                     <p className="text-sm text-muted-foreground mb-2">
                       Besoin d'aide ?
                     </p>
-                    <Button 
-                      size="sm" 
+                    <Button
+                      size="sm"
                       className="w-full"
                       onClick={() => setMobileMenuOpen(false)}
                     >
