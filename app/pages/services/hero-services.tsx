@@ -127,20 +127,7 @@ export function HeroServices() {
             {HERO_DATA.description}
           </motion.p>
           
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5 }}
-          >
-            <Button
-              onClick={scrollToServices}
-              size="lg"
-              className="px-8 py-4 text-lg font-semibold bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300 group"
-            >
-              {HERO_DATA.cta}
-              <ArrowDown className="ml-2 w-5 h-5 group-hover:translate-y-1 transition-transform duration-300" />
-            </Button>
-          </motion.div>
+       
         </motion.div>
         
         {/* Stats Grid - Parfaitement aligné et symétrique */}
