@@ -114,19 +114,20 @@ export function CtaContact() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.6 + index * 0.1 }}
+                  className="w-full sm:w-auto"
                 >
                   <Button 
                     size="lg" 
                     variant={contact.variant}
                     onClick={() => handleAction(contact.action)}
-                    className={`px-8 py-4 text-lg font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 ${
+                    className={`w-full sm:w-auto px-8 py-4 text-lg font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 ${
                       contact.primary 
                         ? 'bg-primary hover:bg-primary/90 text-primary-foreground' 
                         : 'hover:bg-primary/10 hover:text-primary hover:border-primary'
                     }`}
                   >
                     <IconComponent className="mr-2 h-5 w-5" />
-                    {contact.title}
+                    <span className="whitespace-nowrap">{contact.title}</span>
                     {contact.primary && <ArrowRight className="ml-2 h-5 w-5" />}
                   </Button>
                 </motion.div>

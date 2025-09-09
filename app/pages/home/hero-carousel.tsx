@@ -108,7 +108,7 @@ export function HeroCarousel() {
             transition={{ delay: 0.3, duration: 0.6 }}
           >
             <div className="absolute inset-0 bg-gradient-to-br from-muted/50 to-background/30 rounded-2xl backdrop-blur-sm" />
-            <Card className="relative bg-background/40 border-2 border-primary/10 overflow-hidden h-full shadow-2xl rounded-2xl">
+            <Card className="relative bg-background/40 border-2 border-primary/10 overflow-hidden h-full rounded-2xl">
               <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-primary/5 to-secondary/10" />
               <CardContent className="p-0 h-full">
                 <div className="relative h-full w-full overflow-hidden rounded-xl">

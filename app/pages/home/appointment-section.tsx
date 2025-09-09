@@ -126,7 +126,7 @@ export function AppointmentSection() {
         
         {/* CTA Section - Centré parfaitement */}
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-8 sm:mb-12 lg:mb-16"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8 }}
@@ -134,7 +134,7 @@ export function AppointmentSection() {
           <Button 
             size="lg" 
             onClick={openCalendly}
-            className="bg-primary hover:bg-primary/90 text-primary-foreground px-12 py-4 text-lg font-semibold shadow-xl hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300"
+            className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground px-6 sm:px-8 lg:px-12 py-3 sm:py-4 text-base sm:text-lg font-semibold shadow-xl hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300 whitespace-normal sm:whitespace-nowrap"
           >
             Réserver ma consultation gratuite
           </Button>
