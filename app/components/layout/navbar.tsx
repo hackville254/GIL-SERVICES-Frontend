@@ -231,15 +231,28 @@ function MobileMenuItem({ item, onClose }: { item: any; onClose: () => void }) {
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrollY, setScrollY] = useState(0);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [visible, setVisible] = useState(true);
+  const [showPreHeader, setShowPreHeader] = useState(true);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
+      const currentScrollY = window.scrollY
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        // Scroll vers le bas -> cacher la navbar
+        setVisible(false)
+      } else if (currentScrollY < lastScrollY) {
+        // Scroll vers le haut -> afficher la navbar
+        setVisible(true)
+      }
+
+      setLastScrollY(currentScrollY)
+    }
+
+    window.addEventListener("scroll", handleScroll, { passive: true })
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [lastScrollY])
 
   // Fermer le menu mobile quand on clique en dehors
   useEffect(() => {
@@ -267,15 +280,17 @@ export function Navbar() {
     };
   }, [mobileMenuOpen]);
 
-  const isVisible = scrollY > 50;
-
   return (
     <>
+      {/* Pre-navbar spacer */}
+      {showPreHeader && <div className="h-8 md:h-8" />}
+
       <header
         className={cn(
-          "fixed z-50 w-full border-b transition-all duration-300 bg-background/95 backdrop-blur-md",
-          isVisible ? "translate-y-8 md:translate-y-8" : "-translate-y-full"
+          "fixed z-50 w-full border-b my-2 transition-all duration-300 bg-background/95 backdrop-blur-md",
+          visible ? "translate-y-0" : "-translate-y-full"
         )}
+        style={{ top: showPreHeader ? "2rem" : "0" }}
       >
         <div className="container mx-auto px-4">
           <div className="flex h-16 items-center justify-between">

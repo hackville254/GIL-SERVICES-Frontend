@@ -124,7 +124,7 @@ export function HeroCarousel() {
       </AnimatePresence>
 
       {/* Hero principal */}
-      <div className="bg-gradient-to-br from-background to-accent/5 min-h-[90vh] relative overflow-hidden mt-3 md:mt-0">
+      <div className="bg-gradient-to-br from-background to-accent/5 min-h-[90vh] relative overflow-hidden mt-3">
         {/* Éléments décoratifs */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-20 left-10 w-64 h-64 rounded-full bg-accent/10 blur-3xl"></div>
