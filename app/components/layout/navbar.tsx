@@ -274,7 +274,7 @@ export function Navbar() {
       <header
         className={cn(
           "fixed z-50 w-full border-b transition-all duration-300 bg-background/95 backdrop-blur-md",
-          isVisible ? "translate-y-0" : "-translate-y-full"
+          isVisible ? "translate-y-8 md:translate-y-8" : "-translate-y-full"
         )}
       >
         <div className="container mx-auto px-4">
