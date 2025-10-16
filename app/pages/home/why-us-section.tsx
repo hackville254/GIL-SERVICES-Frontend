@@ -6,7 +6,7 @@ import { motion } from "framer-motion"
 
 // Variables pour stocker les données "Pourquoi nous"
 const WHY_US_DATA = {
-  title: "Pourquoi choisir GIL SERVICES ?",
+  title: "Pourquoi choisir GIL SERVICES",
   subtitle: "Excellence & Confiance",
   description: "Nous avons pour missions d'assister et d'accompagner les entreprises dans la réalisation de leurs objectifs, en menant à bien les projets qui nous sont confiés, en utilisant toutes nos compétences, idées, notre expérience, ainsi que notre portefeuille relationnel.",
   cta: {
