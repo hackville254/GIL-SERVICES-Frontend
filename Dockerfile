@@ -27,8 +27,8 @@ COPY --from=deps /app/node_modules ./node_modules
 COPY package.json ./
 
 # Configuration du port 
-EXPOSE 8929
-ENV PORT=8929
+EXPOSE 3049
+ENV PORT=3049
 
 # Démarrer l'application
 CMD ["pnpm", "run", "start"]
