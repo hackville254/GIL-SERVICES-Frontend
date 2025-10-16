@@ -40,7 +40,9 @@ export function PreNavbar() {
           {ANNONCES.map((text, i) => (
             <span
               key={i}
-              className="w-full flex-shrink-0 px-4 md:px-6 text-center break-words"
+              className="w-full flex-shrink-0 px-4 md:px-6 text-center break-words
+                         overflow-hidden whitespace-nowrap md:whitespace-normal
+                         text-ellipsis"
             >
               {text}
             </span>
