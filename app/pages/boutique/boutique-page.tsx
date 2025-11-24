@@ -67,7 +67,7 @@ export function BoutiquePage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.45 }}
             >
-              <Badge variant="secondary" className="mb-3 inline-block text-sm font-medium text-primary">Boutique</Badge>
+              <Badge variant="primary" className="mb-3 inline-block text-sm font-medium text-primary">Boutique</Badge>
               <h1 className="text-3xl font-semibold tracking-tight">Nos solutions prêtes à l’emploi</h1>
               <p className="mt-2 text-muted-foreground">
                 Des outils conçus pour simplifier la gestion de votre entreprise.
