@@ -68,7 +68,7 @@ const CountUpAnimation = ({ target, suffix = "", duration = 2000 }) => {
 
 export function HeroNews() {
   return (
-    <Card className="min-h-[80vh] border-0 rounded-none bg-gradient-to-br from-background via-muted/20 to-muted/40 relative overflow-hidden">
+    <Card className="min-h-[80vh] border-0 rounded-none bg-gradient-to-br from-background via-muted/20 to-muted/40 relative overflow-hidden mt-16"> 
       {/* Background gradients - Parfaitement symétriques */}
       <div className="absolute inset-0">
         {/* Dégradé principal léger */}

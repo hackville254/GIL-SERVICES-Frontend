@@ -120,7 +120,7 @@ export function CtaContact() {
                     size="lg" 
                     variant={contact.variant}
                     onClick={() => handleAction(contact.action)}
-                    className={`w-full sm:w-auto px-8 py-4 text-lg font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 ${
+                    className={`w-full sm:w-auto px-8 py-4 text-lg font-semibold hover:shadow-2xl transition-all duration-300 ${
                       contact.primary 
                         ? 'bg-primary hover:bg-primary/90 text-primary-foreground' 
                         : 'hover:bg-primary/10 hover:text-primary hover:border-primary'

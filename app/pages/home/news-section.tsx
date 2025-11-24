@@ -3,6 +3,7 @@ import { Button } from "~/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "~/components/ui/card"
 import { Badge } from "~/components/ui/badge"
 import { motion } from "framer-motion"
+import { Link } from "react-router"
 
 // Variables pour stocker les données des actualités
 const NEWS_DATA = {
@@ -50,8 +51,7 @@ export function NewsSection() {
           transition={{ duration: 0.4 }}
         >
           <Badge
-            variant="secondary"
-            className="mb-4 inline-block text-sm font-medium text-primary"
+            className="mb-4 inline-block text-sm font-medium"
           >
             {NEWS_DATA.subtitle}
           </Badge>
@@ -127,13 +127,15 @@ export function NewsSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6 }}
         >
-          <Button
-            variant="link"
-            size="sm"
-            className="text-primary hover:bg-primary/5 font-normal"
-          >
-            Voir toutes les actualités
-          </Button>
+          <Link to="/actualites">
+            <Button
+              variant="link"
+              size="sm"
+              className="text-primary hover:bg-primary/5 font-normal"
+            >
+              Voir toutes les actualités
+            </Button>
+          </Link>
         </motion.div>
       </div>
     </section>
