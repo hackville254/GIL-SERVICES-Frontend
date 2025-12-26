@@ -1,167 +1,148 @@
-import { CheckCircle, Clock, Award, Users, ArrowRight } from "lucide-react"
-import { Button } from "~/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from "~/components/ui/card"
+import { Award, Search, Rocket, Users } from "lucide-react"
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "~/components/ui/card"
 import { Badge } from "~/components/ui/badge"
 import { motion } from "framer-motion"
 
-// Variables pour stocker les données "Pourquoi nous"
+// Variables pour stocker les données "Nos Valeurs"
 const WHY_US_DATA = {
-  title: "Pourquoi choisir GIL SERVICES",
-  subtitle: "Excellence & Confiance",
-  description: "Nous avons pour missions d'assister et d'accompagner les entreprises dans la réalisation de leurs objectifs, en menant à bien les projets qui nous sont confiés, en utilisant toutes nos compétences, idées, notre expérience, ainsi que notre portefeuille relationnel.",
-  cta: {
-    title: "Contactez-nous !",
-    phone: "+(237) 233 411 842",
-    description: "Contactez nous et obtenez votre première consultation gratuitement",
-    urgency: "L'offre expire dans 24 heures."
-  },
-  reasons: [
+  title: "NOS VALEURS",
+  subtitle: "Notre ADN",
+  description: "Les piliers fondamentaux qui guident Gil Services dans chaque mission et garantissent votre satisfaction.",
+  values: [
     {
       id: 1,
-      icon: CheckCircle,
-      title: "Expertise Reconnue",
-      description: "Plus de 10 ans d'expérience dans le conseil et l'accompagnement d'entreprises",
-      features: ["10+ ans d'expérience", "Conseil expert", "Accompagnement"]
+      number: "01",
+      title: "COMPÉTENCE",
+      description: "La Satisfaction client, Le Savoir-faire, L'Esprit d'équipe, L'Excellence.",
+      details: ["Satisfaction client", "Savoir-faire", "Esprit d'équipe", "Excellence"],
+      icon: Award,
+      color: "bg-blue-600",
+      textColor: "text-blue-600",
+      borderColor: "border-blue-200",
+      gradient: "from-blue-50 to-blue-100",
     },
     {
       id: 2,
-      icon: Clock,
-      title: "Réactivité",
-      description: "Création d'entreprise en 72h chrono, satisfait ou remboursé",
-      features: ["72h chrono", "Satisfait ou remboursé", "Service rapide"]
+      number: "02",
+      title: "TRANSPARENCE",
+      description: "Clarté, Sécurité dans toutes nos démarches.",
+      details: ["Clarté", "Sécurité"],
+      icon: Search,
+      color: "bg-emerald-600",
+      textColor: "text-emerald-600",
+      borderColor: "border-emerald-200",
+      gradient: "from-emerald-50 to-emerald-100",
     },
     {
       id: 3,
-      icon: Award,
-      title: "Qualité Garantie",
-      description: "Services 100% sur mesure avec un suivi personnalisé",
-      features: ["100% sur mesure", "Suivi personnalisé", "Qualité garantie"]
+      number: "03",
+      title: "CONQUÊTE",
+      description: "L'Innovation constante et la recherche de la Performance.",
+      details: ["Innovation", "Performance"],
+      icon: Rocket,
+      color: "bg-purple-700",
+      textColor: "text-purple-700",
+      borderColor: "border-purple-200",
+      gradient: "from-purple-50 to-purple-100",
     },
     {
       id: 4,
+      number: "04",
+      title: "PROXIMITÉ CLIENT",
+      description: "Une écoute active pour des solutions adaptées.",
+      details: ["Écoute", "Disponibilité"],
       icon: Users,
-      title: "Équipe Dédiée",
-      description: "Une équipe d'experts à votre écoute pour tous vos projets",
-      features: ["Équipe d'experts", "À votre écoute", "Tous projets"]
-    }
+      color: "bg-green-600",
+      textColor: "text-green-600",
+      borderColor: "border-green-200",
+      gradient: "from-green-50 to-green-100",
+    },
   ]
 }
 
 export function WhyUsSection() {
   return (
-    <Card className="min-h-[85vh] border-0 rounded-none bg-gradient-to-br from-background via-muted/20 to-muted/40 relative overflow-hidden">
-      {/* Background gradients - Parfaitement symétriques */}
-      <div className="absolute inset-0">
-        {/* Dégradé principal léger */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5" />
-        <div className="absolute inset-0 bg-gradient-to-tl from-accent/3 via-transparent to-primary/3" />
-        
-        {/* Dégradés radiaux symétriques */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_25%,rgba(var(--primary),0.06)_0%,transparent_40%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_25%,rgba(var(--secondary),0.06)_0%,transparent_40%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_75%,rgba(var(--accent),0.06)_0%,transparent_40%)]" />
-        
-        {/* Overlay subtil pour uniformiser */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/5 to-transparent" />
-      </div>
-      
-      <CardContent className="container mx-auto px-6 sm:px-8 lg:px-12 py-20 relative">
-        {/* Header Section - Centré parfaitement */}
+    <section className="py-20 bg-background relative overflow-hidden">
+      {/* Background Decoratif */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_10%,rgba(var(--primary),0.05)_0%,transparent_50%)] pointer-events-none" />
+
+      <div className="container mx-auto px-4">
+        {/* Header Section */}
         <motion.div 
-          className="text-center mb-20 max-w-4xl mx-auto"
+          className="text-center mb-20 max-w-3xl mx-auto"
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <motion.div
-            className="flex justify-center mb-8"
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
+          <Badge
+            variant="secondary"
+            className="mb-4 text-sm font-medium bg-primary/10 text-primary px-4 py-1 uppercase tracking-wider"
           >
-            <Badge
-              variant="secondary"
-              className="text-sm font-medium bg-primary/10 text-primary px-6 py-2 backdrop-blur-sm border border-primary/20"
-            >
-              {WHY_US_DATA.subtitle}
-            </Badge>
-          </motion.div>
+            {WHY_US_DATA.subtitle}
+          </Badge>
           
-          <motion.h2
-            className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight tracking-tight mb-8"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-          >
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 uppercase tracking-tight">
             {WHY_US_DATA.title}
-          </motion.h2>
+          </h2>
           
-          <motion.p
-            className="text-muted-foreground leading-relaxed max-w-3xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-          >
+          <p className="text-muted-foreground text-lg leading-relaxed">
             {WHY_US_DATA.description}
-          </motion.p>
+          </p>
         </motion.div>
         
-        {/* Reasons Grid - Parfaitement aligné et symétrique */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 max-w-7xl mx-auto mb-16">
-          {WHY_US_DATA.reasons.map((reason, index) => {
-            const IconComponent = reason.icon
+        {/* Values Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
+          {WHY_US_DATA.values.map((value, index) => {
+            const IconComponent = value.icon
             return (
               <motion.div
-                key={reason.id}
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 + index * 0.15, duration: 0.7 }}
-                className="group flex"
+                key={value.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.15, duration: 0.5 }}
               >
-                <Card className="w-full bg-background/70 backdrop-blur-sm border-2 border-primary/10 hover:border-primary/25 hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 overflow-hidden flex flex-col">
-                  {/* Icon Section - Hauteur fixe pour symétrie */}
-                  <div className="relative overflow-hidden h-32 bg-gradient-to-br from-primary/8 to-secondary/8 flex items-center justify-center">
-                    <div className="absolute top-4 left-4 z-20">
-                      <Badge variant="secondary" className="bg-background/95 backdrop-blur-sm p-3 shadow-xl border border-primary/20">
-                        <IconComponent className="w-6 h-6 text-primary" />
-                      </Badge>
-                    </div>
-                    <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">
-                      <IconComponent className="w-8 h-8 text-primary" />
-                    </div>
-                  </div>
+                <Card className={`h-full border-2 ${value.borderColor} hover:shadow-xl transition-all duration-300 group overflow-hidden`}>
+                  <div className={`h-2 w-full ${value.color}`} />
                   
-                  {/* Content Section - Flex pour égaliser les hauteurs */}
-                  <div className="flex flex-col flex-1">
-                    <CardHeader className="pb-4 px-6 pt-6">
-                      <CardTitle className="text-xl font-bold text-foreground group-hover:text-primary transition-colors duration-300 text-center mb-3">
-                        {reason.title}
-                      </CardTitle>
-                      <CardDescription className="text-muted-foreground leading-relaxed text-center">
-                        {reason.description}
-                      </CardDescription>
-                    </CardHeader>
-                    
-                    <CardContent className="pt-0 pb-4 px-6 flex-1">
-                      <div className="flex gap-2 flex-wrap justify-center">
-                        {reason.features.map((feature, featureIndex) => (
-                          <Badge
-                            key={featureIndex}
-                            variant="outline"
-                            className="bg-background/60 border-primary/25 text-primary text-xs px-3 py-1.5 font-medium"
-                          >
-                            {feature}
-                          </Badge>
-                        ))}
+                  <CardHeader className="relative pb-2">
+                    <div className="flex justify-between items-start mb-4">
+                      <div className={`p-3 rounded-xl ${value.gradient} ${value.textColor}`}>
+                        <IconComponent className="w-8 h-8" />
                       </div>
-                    </CardContent>
-                  </div>
+                      <span className={`text-4xl font-black opacity-10 ${value.textColor}`}>
+                        {value.number}
+                      </span>
+                    </div>
+                    
+                    <CardTitle className={`text-xl font-bold uppercase mb-2 ${value.textColor}`}>
+                      {value.title}
+                    </CardTitle>
+                  </CardHeader>
+                  
+                  <CardContent>
+                    <CardDescription className="text-base text-muted-foreground mb-6 min-h-[3rem]">
+                      {value.description}
+                    </CardDescription>
+                    
+                    <div className="flex flex-wrap gap-2">
+                      {value.details.map((detail, idx) => (
+                        <span 
+                          key={idx} 
+                          className={`inline-flex items-center text-xs font-semibold px-2.5 py-0.5 rounded-full bg-background border ${value.borderColor} ${value.textColor}`}
+                        >
+                          {detail}
+                        </span>
+                      ))}
+                    </div>
+                  </CardContent>
                 </Card>
               </motion.div>
             )
           })}
         </div>
-      </CardContent>
-    </Card>
+      </div>
+    </section>
   )
 }
