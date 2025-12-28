@@ -58,7 +58,7 @@ export function PricingSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.4 }}
         >
-          <Badge variant="primary" className="mb-4 inline-block text-sm font-medium text-primary uppercase tracking-wider">
+          <Badge variant="default" className="mb-4 inline-block text-sm font-medium text-primary uppercase tracking-wider">
             {PRICING_DATA.subtitle}
           </Badge>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">{PRICING_DATA.title}</h2>
