@@ -24,7 +24,7 @@ const PRICING_DATA = {
       price: "550 000 FCFA",
       color: "bg-pink-500",
       borderColor: "border-pink-500",
-      popular: true,
+      popular: false,
     },
     {
       id: 3,
@@ -42,7 +42,7 @@ const PRICING_DATA = {
       price: "450 000 FCFA",
       color: "bg-green-500",
       borderColor: "border-green-500",
-      popular: false, // Le plus acheté / Best Value
+      popular: true, // Le plus acheté / Best Value
     },
   ],
 }

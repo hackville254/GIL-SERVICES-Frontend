@@ -168,7 +168,7 @@ export function Footer() {
 
         {/* Barre du bas */}
         <div className="border-t border-border mt-8 pt-8 text-center text-sm text-muted-foreground">
-          <p>&copy; {currentYear} {COMPANY_INFO.name}. Tous droits réservés.</p>
+          <p>&copy; 2022 - {currentYear} {COMPANY_INFO.name}. Tous droits réservés.</p>
         </div>
       </div>
     </footer>

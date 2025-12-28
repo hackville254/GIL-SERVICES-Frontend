@@ -13,11 +13,11 @@ export function HomePage() {
   return (
     <main className="min-h-screen">
       <HeroCarousel />
-      <EneoPaymentSection />
       <ServicesSection />
       <DomainsSection />
       <WhyUsSection />
       <AppointmentSection />
+      <EneoPaymentSection />
       <NewsSection />
       {/* Rubrique Prix */}
       <PricingSection />
