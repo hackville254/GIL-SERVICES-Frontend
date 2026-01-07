@@ -46,7 +46,7 @@ export function EneoPaymentSection() {
                 src={logo.src}
                 alt={logo.name}
                 loading="lazy"
-                className="h-10 w-full object-contain grayscale hover:grayscale-0 transition duration-200"
+                className="h-10 w-full object-contain transition duration-200"
                 // onError={(e) => {
                 //   e.currentTarget.src = "/logo.png"
                 // }}
