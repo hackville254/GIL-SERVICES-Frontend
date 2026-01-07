@@ -106,40 +106,103 @@ export function ContactInfo() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 max-w-5xl mx-auto">
           {CONTACT_INFO_DATA.contacts.map((contact, index) => {
             const IconComponent = contact.icon
+            
+            const buildWhatsAppLink = (tel: string) =>
+              `https://wa.me/${tel.replace(/\s|\+/g, '')}`
+            
+            const buildTelLink = (tel: string) => 
+              `tel:${tel.replace(/\s/g, '')}`
+
+            const isPhone = contact.title === 'Téléphone'
+            const isEmail = contact.title === 'Email'
+
             return (
               <motion.div
                 key={contact.id}
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 + index * 0.1 }}
+                className="h-full"
               >
-                <Card className="p-8 text-center bg-background/60 backdrop-blur-sm border border-border/50 hover:border-primary/30 transition-all duration-300 hover:shadow-xl group h-full">
+                <Card className="p-8 text-center bg-background/60 backdrop-blur-sm border border-border/50 hover:border-primary/30 transition-all duration-300 hover:shadow-xl group h-full flex flex-col items-center">
                   <div className="flex justify-center mb-6">
                     <div className="p-4 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors duration-300">
                       <IconComponent className="h-8 w-8 text-primary" />
                     </div>
                   </div>
-                  
+
                   <h3 className="text-xl font-bold text-foreground mb-4">
                     {contact.title}
                   </h3>
-                  
-                  <div className="space-y-2">
-                    <p className="text-base font-medium text-foreground">
-                      {contact.primary}
-                    </p>
+
+                  <div className="space-y-3 w-full flex flex-col items-center">
+                    {/* Primary info */}
+                    {contact.primary && (
+                      <div className="flex justify-center w-full">
+                        {isPhone ? (
+                          <a
+                            href={buildTelLink(contact.primary)}
+                            className="text-base font-medium text-foreground hover:text-primary transition-colors block p-1"
+                          >
+                            {contact.primary}
+                          </a>
+                        ) : isEmail ? (
+                          <a
+                            href={`mailto:${contact.primary}`}
+                            className="text-base font-medium text-foreground hover:text-primary transition-colors block p-1"
+                          >
+                            {contact.primary}
+                          </a>
+                        ) : (
+                          <p className="text-base font-medium text-foreground p-1">
+                            {contact.primary}
+                          </p>
+                        )}
+                      </div>
+                    )}
+
+                    {/* Secondary info */}
                     {contact.secondary && (
-                      <p className="text-base font-medium text-foreground">
-                        {contact.secondary}
-                      </p>
+                      <div className="flex justify-center w-full">
+                        {isPhone ? (
+                          <a
+                            href={buildTelLink(contact.secondary)}
+                            className="text-base font-medium text-foreground hover:text-primary transition-colors block p-1"
+                          >
+                            {contact.secondary}
+                          </a>
+                        ) : (
+                          <p className="text-base font-medium text-foreground p-1">
+                            {contact.secondary}
+                          </p>
+                        )}
+                      </div>
                     )}
+
+                    {/* Tertiary info - WhatsApp for Phone */}
                     {contact.tertiary && (
-                      <p className="text-base font-medium text-foreground">
-                        {contact.tertiary}
-                      </p>
+                      <div className="flex justify-center w-full">
+                        {isPhone ? (
+                          <a
+                            href={buildWhatsAppLink(contact.tertiary)}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-base font-medium text-foreground hover:text-[#25D366] transition-colors flex items-center gap-2 p-1"
+                          >
+                            <span>{contact.tertiary}</span>
+                            <span className="text-xs bg-[#25D366]/10 text-[#25D366] px-2 py-0.5 rounded-full border border-[#25D366]/20">WhatsApp</span>
+                          </a>
+                        ) : (
+                          <p className="text-base font-medium text-foreground p-1">
+                            {contact.tertiary}
+                          </p>
+                        )}
+                      </div>
                     )}
+
+                    {/* Optional note */}
                     {contact.note && (
-                      <p className="text-sm text-muted-foreground">
+                      <p className="text-sm text-muted-foreground mt-2">
                         {contact.note}
                       </p>
                     )}

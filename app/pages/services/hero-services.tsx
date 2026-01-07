@@ -6,9 +6,9 @@ import { motion, useInView } from "framer-motion"
 import { useEffect, useRef, useState } from "react"
 
 const HERO_DATA = {
-  title: "Nos Services",
-  subtitle: "Excellence & Innovation",
-  description: "Chez GIL SERVICES, nous transformons vos défis en opportunités. Notre expertise et notre écoute attentive de vos besoins nous permettent de vous accompagner vers le succès. Découvrez nos services spécialisés pour faire grandir votre entreprise.",
+  title: "Nos Domaines D'Interventions",
+  subtitle: "Gestion, Conseil & Assistance",
+  description: "GIL SERVICES SARL est une entreprise spécialisée dans les Services de Gestion, Conseil, Assistance et les Prestations de Services, motivée par la perfection et spécialisée dans la Comptabilité et Gestion d’Entreprise. Notre rôle est d’accompagner nos clients dans l’atteinte de leurs objectifs, particulièrement en leur permettant de connaitre leur destination, de savoir comment optimiser leur gestion et de quelle manière atteindre rentablement leurs objectifs. Nous offrons à nos clients des solutions sur mesure dans notre périmètre d’intervention.",
   cta: "Découvrir nos services",
   stats: [
     {
@@ -25,9 +25,9 @@ const HERO_DATA = {
     },
     {
       icon: Award,
-      number: 4,
+      number: 10,
       suffix: "",
-      label: "Services spécialisés"
+      label: "Domaines d'intervention"
     },
     {
       icon: Clock,
