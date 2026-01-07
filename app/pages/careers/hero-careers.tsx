@@ -24,7 +24,7 @@ const HERO_CAREERS_DATA = {
     },
     {
       icon: Award,
-      number: 3,
+      number: 5,
       suffix: "",
       label: "Années de croissance"
     },

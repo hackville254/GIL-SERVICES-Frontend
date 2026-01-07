@@ -13,7 +13,10 @@ const CONTACT_INFO_DATA = {
       id: 1,
       icon: Phone,
       title: "Téléphone",
-      primary: "+237 657 842 066",
+      primary: "+237 657 84 20 66",
+      secondary: "+237 233 41 18 42",
+      tertiary: "+237 672 53 90 31",
+      note: "",
       color: "primary"
     },
     {
@@ -121,9 +124,26 @@ export function ContactInfo() {
                     {contact.title}
                   </h3>
                   
-                  <p className="text-base font-medium text-foreground">
-                    {contact.primary}
-                  </p>
+                  <div className="space-y-2">
+                    <p className="text-base font-medium text-foreground">
+                      {contact.primary}
+                    </p>
+                    {contact.secondary && (
+                      <p className="text-base font-medium text-foreground">
+                        {contact.secondary}
+                      </p>
+                    )}
+                    {contact.tertiary && (
+                      <p className="text-base font-medium text-foreground">
+                        {contact.tertiary}
+                      </p>
+                    )}
+                    {contact.note && (
+                      <p className="text-sm text-muted-foreground">
+                        {contact.note}
+                      </p>
+                    )}
+                  </div>
                 </Card>
               </motion.div>
             )
